@@ -29,6 +29,7 @@ namespace Source.Scripts.Gameplay.View
         [SerializeField] private Letter letter;
         [SerializeField] private float letterOffset = 100f;
         [SerializeField] private Draggable draggable;
+        [SerializeField] private RectTransform rectTransform;
         
         private Action<ClusterView, WordSlotView> _onDrop;
         private Action<ClusterView> _onMiss;
@@ -62,19 +63,23 @@ namespace Source.Scripts.Gameplay.View
                 clone.RectTransform.anchoredPosition = new Vector2(currentOffset, 0);
                 currentOffset += letterOffset;
             }
+
+            rectTransform.sizeDelta = new Vector2(currentOffset, rectTransform.sizeDelta.y);
         }
 
         private void PlaceCluster(PointerEventData eventData)
         {
-            if (eventData.pointerEnter.TryGetComponent<WordSlotView>(out var slot))
+            if (eventData.pointerEnter != null)
             {
-                slot.OnPlaced();
-                _onDrop?.Invoke(this, slot);
+                if (eventData.pointerEnter.TryGetComponent<WordSlotView>(out var slot))
+                {
+                    slot.OnPlaced();
+                    _onDrop?.Invoke(this, slot);
+                    return;
+                }
             }
-            else
-            {
-                _onMiss?.Invoke(this);
-            }
+
+            _onMiss?.Invoke(this);
         }
     }
 }

@@ -1,3 +1,4 @@
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using Source.Scripts.Config;
@@ -5,12 +6,13 @@ using Source.Scripts.Gameplay.Model;
 
 namespace Source.Scripts.Gameplay.Controller
 {
-    public class BoardValidator
+    public class BoardValidator : IValidator<ValidationResult>
     {
         private readonly RuntimeData _runtimeData;
         private readonly LevelConfig _levelConfig;
         
         //Observable<ValidationResult>
+        public event Action<ValidationResult> OnValidated;
         
         public BoardValidator(RuntimeData runtimeData, LevelConfig levelConfig)
         {
@@ -21,6 +23,7 @@ namespace Source.Scripts.Gameplay.Controller
         public void Validate()
         {
             ValidationResult result = ValidateBoard();
+            OnValidated?.Invoke(result);
             //Observable<ValidationResult>?.OnNext
         }
 
@@ -53,20 +56,6 @@ namespace Source.Scripts.Gameplay.Controller
             
 
             return new ValidationResult(true, "All words are correct");
-        }
-    }
-    
-    public class ValidationResult
-    {
-        public bool IsValid { get; }
-        public string Message { get; }
-        public List<int> InvalidSlotIndices { get; }
-
-        public ValidationResult(bool isValid, string message, List<int> invalidSlotIndices = null)
-        {
-            IsValid = isValid;
-            Message = message;
-            InvalidSlotIndices = invalidSlotIndices ?? new List<int>();
         }
     }
 }

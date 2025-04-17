@@ -13,7 +13,7 @@ namespace Source.Scripts.Gameplay.Controller
 {
     public class ClusterPlacement
     {
-        private readonly LevelConfig _levelModel;
+        private readonly RuntimeData _runtimeData;
         private readonly ClusterView _clusterPrefab;
         private readonly WordSlotView _wordSlotPrefab;
         private readonly SlotsContainerView _slotsContainerView;
@@ -23,10 +23,10 @@ namespace Source.Scripts.Gameplay.Controller
         private readonly Dictionary<ClusterView, LetterCluster> _clusterMapping = new Dictionary<ClusterView, LetterCluster>();
         private readonly Dictionary<ClusterView, WordSlot> _clustersInSlots = new Dictionary<ClusterView, WordSlot>();
 
-        public ClusterPlacement(LevelConfig levelModel, ClusterView clusterPrefab, WordSlotView wordSlotPrefab,
+        public ClusterPlacement(RuntimeData runtimeData, ClusterView clusterPrefab, WordSlotView wordSlotPrefab,
             SlotsContainerView slotsContainerView)
         {
-            _levelModel = levelModel;
+            _runtimeData = runtimeData;
             _clusterPrefab = clusterPrefab;
             _wordSlotPrefab = wordSlotPrefab;
             _slotsContainerView = slotsContainerView;
@@ -34,24 +34,24 @@ namespace Source.Scripts.Gameplay.Controller
 
         public void Initialize(GameView gameView)
         {
-            for (var i = 0; i < _levelModel.Segments.Count; i++)
+            for (var i = 0; i < _runtimeData.Clusters.Count; i++)
             {
-                var clusterModel = new LetterCluster(_levelModel.Segments[i]);
+                var clusterModel = new LetterCluster(_runtimeData.Clusters[i]);
                 var clusterView = Object.Instantiate(_clusterPrefab, gameView.ClustersParent);
                 
                 clusterView.Setup(clusterModel.Letters, OnClusterDrop, OnClusterMiss);
                 _clusterMapping[clusterView] = clusterModel;
             }
             
-            for (int i = 0; i < _levelModel.Words.Count; i++)
+            for (int i = 0; i < _runtimeData.WordSlots.Count; i++)
             {
-                var slot = new WordSlot(_levelModel.Words[i].Length);
+                var slot = _runtimeData.WordSlots[i];
                 var slotsContainer = Object.Instantiate(_slotsContainerView, gameView.SlotsParent);
-                for (int j = 0; j < _levelModel.Words[i].Length; j++)
+                for (int j = 0; j < slot.Size; j++)
                 {
                     var slotView = Object.Instantiate(_wordSlotPrefab, slotsContainer.SlotsParent);
                     _slotMapping[slotView] = slot;
-                    _slotIndexMapping[slotView] = _levelModel.Words[i].Length - 1 - j;
+                    _slotIndexMapping[slotView] = slot.Size - 1 - j;
                 }
             }
         }

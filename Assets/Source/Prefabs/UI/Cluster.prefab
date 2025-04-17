@@ -165,6 +165,7 @@ MonoBehaviour:
     rectTransform: {fileID: 3942874432254880567}
   letterOffset: 100
   draggable: {fileID: 5120255573504880526}
+  rectTransform: {fileID: 7034015850351118998}
 --- !u!1 &8121704194828203826
 GameObject:
   m_ObjectHideFlags: 0

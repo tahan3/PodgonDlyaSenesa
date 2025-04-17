@@ -14,6 +14,7 @@ namespace Source.Scripts.Gameplay.Model
         private int _currentSize;
 
         public bool IsFull => _currentSize == _size;
+        public int Size => _size;
         
         public WordSlot(int size)
         {
