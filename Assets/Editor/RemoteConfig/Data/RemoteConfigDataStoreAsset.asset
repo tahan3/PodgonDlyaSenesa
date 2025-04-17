@@ -1,0 +1,54 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 469c24fdb3bd6431b92cc1465bd9166b, type: 3}
+  m_Name: RemoteConfigDataStoreAsset
+  m_EditorClassIdentifier: 
+  _rsKeyList: '[]'
+  _rsLastCachedKeyList: "[\r\n  {\r\n    \"metadata\": {\r\n      \"entityId\": \"248c97c7-eb6b-41ba-bf3c-d867afcf6c40\"\r\n   
+    },\r\n    \"rs\": {\r\n      \"key\": \"Levels\",\r\n      \"type\": \"json\",\r\n     
+    \"schemaId\": null,\r\n      \"value\": [\r\n        {\r\n          \"level_index\":
+    0,\r\n          \"segments\": [\r\n            \"\u0430\u0440\",\r\n           
+    \"\u0442\",\r\n            \"\u0435\u043B\u044C\",\r\n            \"\u0431\u0430\u043B\",\r\n           
+    \"\u043A\u043E\u043D\",\r\n            \"\u0432\",\r\n            \"\u0435\u043A\u0442\",\r\n           
+    \"\u043E\u0440\",\r\n            \"\u0433\u0440\",\r\n            \"\u043E\",\r\n           
+    \"\u043C\u0430\u0434\"\r\n          ],\r\n          \"words\": [\r\n           
+    \"\u0430\u0440\u0442\u0435\u043B\u044C\",\r\n            \"\u0431\u0430\u043B\u043A\u043E\u043D\",\r\n           
+    \"\u0432\u0435\u043A\u0442\u043E\u0440\",\r\n            \"\u0433\u0440\u043E\u043C\u0430\u0434\"\r\n         
+    ]\r\n        },\r\n        {\r\n          \"level_index\": 1,\r\n          \"segments\":
+    [\r\n            \"\u0430\u0440\",\r\n            \"\u0442\",\r\n           
+    \"\u0435\u043B\u044C\",\r\n            \"\u0431\u0430\u043B\",\r\n           
+    \"\u043A\u043E\u043D\",\r\n            \"\u0432\",\r\n            \"\u0435\u043A\u0442\",\r\n           
+    \"\u043E\u0440\",\r\n            \"\u0433\u0440\",\r\n            \"\u043E\",\r\n           
+    \"\u043C\u0430\u0434\"\r\n          ],\r\n          \"words\": [\r\n           
+    \"\u0430\u0440\u0442\u0435\u043B\u044C\",\r\n            \"\u0431\u0430\u043B\u043A\u043E\u043D\",\r\n           
+    \"\u0432\u0435\u043A\u0442\u043E\u0440\",\r\n            \"\u0433\u0440\u043E\u043C\u0430\u0434\"\r\n         
+    ]\r\n        },\r\n        {\r\n          \"level_index\": 2,\r\n          \"segments\":
+    [\r\n            \"\u0430\u0440\",\r\n            \"\u0442\",\r\n           
+    \"\u0435\u043B\u044C\",\r\n            \"\u0431\u0430\u043B\",\r\n           
+    \"\u043A\u043E\u043D\",\r\n            \"\u0432\",\r\n            \"\u0435\u043A\u0442\",\r\n           
+    \"\u043E\u0440\",\r\n            \"\u0433\u0440\",\r\n            \"\u043E\",\r\n           
+    \"\u043C\u0430\u0434\"\r\n          ],\r\n          \"words\": [\r\n           
+    \"\u0430\u0440\u0442\u0435\u043B\u044C\",\r\n            \"\u0431\u0430\u043B\u043A\u043E\u043D\",\r\n           
+    \"\u0432\u0435\u043A\u0442\u043E\u0440\",\r\n            \"\u0433\u0440\u043E\u043C\u0430\u0434\"\r\n         
+    ]\r\n        },\r\n        {\r\n          \"level_index\": 3,\r\n          \"segments\":
+    [\r\n            \"\u0430\u0440\",\r\n            \"\u0442\",\r\n           
+    \"\u0435\u043B\u044C\",\r\n            \"\u0431\u0430\u043B\",\r\n           
+    \"\u043A\u043E\u043D\",\r\n            \"\u0432\",\r\n            \"\u0435\u043A\u0442\",\r\n           
+    \"\u043E\u0440\",\r\n            \"\u0433\u0440\",\r\n            \"\u043E\",\r\n           
+    \"\u043C\u0430\u0434\"\r\n          ],\r\n          \"words\": [\r\n           
+    \"\u0430\u0440\u0442\u0435\u043B\u044C\",\r\n            \"\u0431\u0430\u043B\u043A\u043E\u043D\",\r\n           
+    \"\u0432\u0435\u043A\u0442\u043E\u0440\",\r\n            \"\u0433\u0440\u043E\u043C\u0430\u0434\"\r\n         
+    ]\r\n        }\r\n      ]\r\n    }\r\n  }\r\n]"
+  _environments: "[\r\n  {\r\n    \"projectId\": \"7dda334c-ada7-4766-b51d-fe5f41047910\",\r\n   
+    \"name\": \"production\",\r\n    \"id\": \"12a5884c-9b92-4f9c-9784-05af1a71c7d8\",\r\n   
+    \"isDefault\": true,\r\n    \"createdAt\": \"2025-04-15T08:48:49Z\",\r\n    \"updatedAt\":
+    \"2025-04-15T08:48:49Z\"\r\n  }\r\n]"
