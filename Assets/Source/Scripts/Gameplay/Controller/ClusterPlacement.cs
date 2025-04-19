@@ -61,6 +61,8 @@ namespace Source.Scripts.Gameplay.Controller
             Debug.Log("Cluster Miss");
 
             RemoveUsedCluster(clusterView);
+            
+            
         }
 
         private void RemoveUsedCluster(ClusterView clusterView)

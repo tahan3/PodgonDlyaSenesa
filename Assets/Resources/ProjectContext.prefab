@@ -76,3 +76,5 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   localConfigPath: Assets/Resources
   remoteConfigKey: Levels
+  sceneKeys: {fileID: 11400000, guid: eb872747df8d64a4d9a4778551677559, type: 2}
+  loadingScreen: {fileID: 3151609486755360474, guid: 87aedb26084df0840a4a60377ada9120, type: 3}
